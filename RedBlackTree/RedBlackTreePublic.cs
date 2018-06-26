@@ -42,6 +42,12 @@ namespace RedBlackTree
             Count--;
         }
 
+        public void Clear()
+        {
+            Root = null;
+            Count = 0;
+        }
+
         public bool HasItem(Node<TKey, TValue> node)
         {
             if (Root == null)
@@ -89,10 +95,12 @@ namespace RedBlackTree
 
     }
 
+
+
     public class Node<TKey, TValue>
     {
-        internal TKey Key;
-        internal TValue Value;
+        public TKey Key;
+        public TValue Value;
         internal Node<TKey, TValue> Parent { get; set; }
 
         internal Node<TKey, TValue> Left { get; set; }

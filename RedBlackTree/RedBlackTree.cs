@@ -34,12 +34,6 @@ namespace RedBlackTree
             }
         }
 
-        internal void Clear()
-        {
-            Root = null;
-            Count = 0;
-        }
-
         private Node<TKey, TValue> FindMax(Node<TKey, TValue> node)
         {
             while (true)
@@ -208,7 +202,7 @@ namespace RedBlackTree
                     if (current.Left == null)
                     {
                         //insert
-                        current.Right = node;
+                        current.Left = node;
                         node.Parent = current;
                         BalanceInsertion(current.Left);
                         return node;
